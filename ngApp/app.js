@@ -7,13 +7,13 @@ angular.module('myApp', [
   // , 'myApp.ledger'
   // , 'myApp.view3'
   // , 'myApp.version'
-  // , 'myApp.jDirectives'
-  // , 'myApp.jFilters'
-  // , 'ui.bootstrap'
+  , 'myApp.jDirectives'
+  , 'myApp.jFilters'
+  , 'ui.bootstrap'
   // , 'angularUtils.directives.dirPagination'
   // , 'ngResource'
-  // , 'angular-growl'
-  // , 'ngAnimate'
+  , 'angular-growl'
+  , 'ngAnimate'
 ]).
 config(function($locationProvider, $routeProvider) {
   "ngInject";
