@@ -1,7 +1,4 @@
 @charset "UTF-8";
-
-
-
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -5926,17 +5923,13 @@ ul.table-list > li.darkBg {
 .clickable {
   cursor: pointer; }
 
-.fix-amount {
-  font-weight: bold;
-  color: #a25858;
-  background: #ffcbcb;
-  padding: 1px 10px;
-  border: 1px solid #a25858; }
-
-.amount {
-  font-family: monospace;
-  font-size: 14px; }
-  .amount.positive {
-    color: #26af33; }
-  .amount.negative {
-    color: #de2929; }
+.game-box {
+  height: 120px;
+  background: rgba(0, 139, 139, 0.5);
+  box-shadow: #696969 4px 4px 8px 0;
+  border: 2px solid #008b8b;
+  border-radius: 3px;
+  padding: 5px 15px;
+  margin: 10px 0; }
+  .game-box .team-flag {
+    max-height: 40px; }

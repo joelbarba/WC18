@@ -23,9 +23,14 @@ ul.table-list > li.darkBg {
 
 .game-box {
   height: 120px;
-  background: #008b8b5e;
+  background: rgba(0, 139, 139, 0.5);
+  box-shadow: #696969 4px 4px 8px 0;
   border: 2px solid #008b8b;
   border-radius: 3px;
   padding: 5px 15px;
   margin: 10px 0;
+  .team-flag{ 
+    max-height: 40px;
+  }
+
 }

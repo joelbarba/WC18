@@ -5,44 +5,40 @@
     
     <!-- Eigthins -->
     <div class="col-xs-2">
-      <div class="game-box">
-        <h5>Game 1 (Sat 30/6 19:00)</h5>
-        <div class="row">
-          <div class="col-md-6">
-            <img src="images/uy.png" style="width: 100%;"/>
-            <h5>Uruguay</h5>
-          </div>
-          <div class="col-md-6">
-            <img src="images/pt.png" style="width: 100%;"/>
-            <h5>Portugal</h5>
-          </div>
-        </div>
-      </div>
-      <div class="game-box">
-        <h5>Game 2</h5>
-      </div>
+      <game-box game-id="0"></game-box>
+      <game-box game-id="1"></game-box>
+
       <div style="height:50px"></div>
-      <div class="game-box">
-        <h5>Game 3</h5>
-      </div>
-      <div class="game-box">
-        <h5>Game 4</h5>
-      </div>
+      
+      
+      <game-box game-id="2"></game-box>
+      <game-box game-id="3"></game-box>
     </div>
     
     <!-- Quarters -->
     <div class="col-xs-2">
       <div class="game-box" style="margin-top:70px">
-        <h5>Game 9</h5>
+        <h5>Game 9 (Sat 30/6 19:00)</h5>
+        <div class="row">
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamA(9), 1)">
+            <img class="team-flag" ng-src="{{'images/' + getTeamA(9).flagImg }}"/>
+            <h5>{{getTeamA(9).name}}</h5>
+          </div>
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamB(9), 1)">
+            <img class="team-flag" ng-src="{{'images/' + getTeamB(9).flagImg }}"/>
+            <h5>{{getTeamB(9).name}}</h5>
+          </div>
+        </div>
       </div>
+
       <div class="game-box" style="margin-top:200px">
         <h5>Game 10</h5>
       </div>
     </div>
     
-    <!-- Semifinal -->
     <div class="col-xs-4">
       
+      <!-- Final -->
       <div class="row">
         <div class="col-xs-6 col-xs-offset-3">
           <div class="game-box" style="margin-top:0px">
@@ -50,7 +46,8 @@
           </div>
         </div>
       </div>
-
+      
+      <!-- Semifinal -->
       <div class="row" style="margin-top:90px">
         <div class="col-xs-6">
           <div class="game-box">
