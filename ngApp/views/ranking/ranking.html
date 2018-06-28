@@ -20,10 +20,26 @@
         <div class="row">
           <div class="col-md-2 ranking-cell">{{player.name}}</div>
           <div class="col-md-1 ranking-cell">{{player.score}}</div>
-          <div class="col-md-9 ranking-cell" style="cursor: pointer" ng-class="{'collapsed': !player.isRowCollapse}">
-            <div ng-repeat="game in player.games" ng-click="player.isRowCollapse=!player.isRowCollapse">
-                {{game.desc}}: {{game.winner.name}}
+          <div class="col-md-9 ranking-cell" style="cursor: pointer" 
+               ng-click="player.isRowCollapse=!player.isRowCollapse" ng-class="{'collapsed': !player.isRowCollapse}">
+            
+            <div ng-repeat="game in player.games | orderBy: reverse:true" >
+              <div class="row">
+                <div class="col-xs-6 text-right">
+                  <h5 style="margin: 7px 0;">{{game.desc}}</h5>
+                </div>
+                <div class="col-xs-6">
+                  
+                  <h5 style="margin: 7px 0;">
+                      <img style="width: 30px; height: 20px; border: 1px solid black; margin-right: 10px;" 
+                      ng-src="{{'images/' + game.winner.flagImg }}"/>
+                    {{game.winner.name}}
+                  </h5>
+                </div>
+              </div>
             </div>
+
+
           </div>
         </div>
       </div>

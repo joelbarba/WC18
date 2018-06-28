@@ -53,6 +53,7 @@ angular.module('myApp.register', ['ngRoute'])
       ];
 
 
+
       // Return team A on the game ID
       $scope.getTeamA = function(gameId) {
         var noTeam = { id: null, name : '???', flagImg: '' };
@@ -163,11 +164,67 @@ angular.module('myApp.register', ['ngRoute'])
           ariaDescribedBy: 'modal-body',
           templateUrl: 'views/register/submit-modal.html',
           scope: $scope,
-          controller: function() {
-          },
-          size: 'md'
+          size: 'md',
+          controller: function($scope, $uibModalInstance, $http) {
+            $scope.yourEmail = 'joel@eee.se';
+
+            $scope.registerBet = function() {
+              console.log('registering', $scope.games);  
+
+              // http://www.reikiwithinyou.com/wc2018/insert_player.php?name=joel%20bar%27ba&email=joel@barba.com&pass=6667
+              var insertUrl = 'http://www.reikiwithinyou.com/wc2018/insert_player.php?name=';
+              insertUrl += $scope.yourName;
+              insertUrl += '&email=' + $scope.yourEmail;
+              insertUrl += '&game1=' + $scope.games[0].winner;
+              insertUrl += '&game2=' + $scope.games[1].winner;
+              insertUrl += '&game3=' + $scope.games[2].winner;
+              insertUrl += '&game4=' + $scope.games[3].winner;
+              insertUrl += '&game5=' + $scope.games[4].winner;
+              insertUrl += '&game6=' + $scope.games[5].winner;
+              insertUrl += '&game7=' + $scope.games[6].winner;
+              insertUrl += '&game8=' + $scope.games[7].winner;
+              insertUrl += '&game9=' + $scope.games[8].winner;
+              insertUrl += '&game10=' + $scope.games[9].winner;
+              insertUrl += '&game11=' + $scope.games[10].winner;
+              insertUrl += '&game12=' + $scope.games[11].winner;
+              insertUrl += '&game13=' + $scope.games[12].winner;
+              insertUrl += '&game14=' + $scope.games[13].winner;
+              insertUrl += '&game15=' + $scope.games[14].winner;
+
+
+              
+              $http({
+                method: 'GET',
+                url: insertUrl
+              }).then(function(response) {
+                console.log('OK');  
+                window.alert('Done, you are already in. Good luck!');
+                $uibModalInstance.close(); 
+
+              }, function errorCallback(response) {
+                console.log('ERROR');   
+                  // called asynchronously if an error occurs
+                  // or server returns response with an error status.
+                });
+              }
+          }
         });
       }
+      // $scope.selectTeam($scope.teams[0],  0);
+      // $scope.selectTeam($scope.teams[2],  1);
+      // $scope.selectTeam($scope.teams[4],  2);
+      // $scope.selectTeam($scope.teams[6],  3);
+      // $scope.selectTeam($scope.teams[8],  4);
+      // $scope.selectTeam($scope.teams[10], 5);
+      // $scope.selectTeam($scope.teams[12], 6);
+      // $scope.selectTeam($scope.teams[14], 7);
+      // $scope.selectTeam($scope.teams[2],  8);
+      // $scope.selectTeam($scope.teams[6],  9);
+      // $scope.selectTeam($scope.teams[10], 10);
+      // $scope.selectTeam($scope.teams[14], 11);
+      // $scope.selectTeam($scope.teams[2],  12);
+      // $scope.selectTeam($scope.teams[10], 13);
+      // $scope.selectTeam($scope.teams[2],  14);
 
 
     }

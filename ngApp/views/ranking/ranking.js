@@ -6,7 +6,7 @@ angular.module('myApp.ranking', ['ngRoute'])
   "ngInject";
   $routeProvider.when('/ranking', {
     templateUrl: 'views/ranking/ranking.html',
-    controller: function($scope, $uibModal) {
+    controller: function($scope, $http, $uibModal) {
 
 
       // https://github.com/hjnilsson/country-flags/tree/master/png100px
@@ -51,25 +51,57 @@ angular.module('myApp.ranking', ['ngRoute'])
         { id: 14, desc: 'FINAL (Sun 15/7 16:00)', teamA: null,  teamB: null,  winner: null },
       ];
 
-      $scope.players = [
-        { id: 0, name: 'Joel 0', score: 10,   winners: [0, 2, 4, 6, 8, 10, 12, 14,   0, 4, 8, 14,   0, 8,  8] },
-        { id: 1, name: 'Joel 1', score: 8,   winners: [0, 2, 4, 6, 8, 10, 12, 14,   0, 4, 8, 14,   0, 8,  0] },
-        { id: 2, name: 'Joel 2', score: 4,  winners: [0, 2, 4, 6, 8, 10, 12, 14,   0, 4, 8, 14,   4, 8,  4] },
-        { id: 3, name: 'Joel 3', score: 11,  winners: [0, 2, 4, 6, 8, 10, 12, 14,   0, 4, 8, 14,   4, 14,  14] }
-      ];
+                    
+      $http({
+        method: 'GET',
+        url: 'http://www.reikiwithinyou.com/wc2018/get_player.php'
+      }).then(function(response) {
+        console.log('OK', response);  
 
-      $scope.players.forEach(function(player) {
-        player.games = []
-        player.winners.forEach(function(winnerId, gameId) {
-          var game = $scope.games[gameId];
-          game.winner = angular.copy($scope.teams[winnerId]);
-          player.games.push(game);
+      }, function errorCallback(response) {
+        console.log('ERROR');   
+          // called asynchronously if an error occurs
+          // or server returns response with an error status.
+
+        $scope.players = [ 
+          { 'id' : '29', 'name' : 'aaaaaaaaaaa', 'email' : 'joel@eee.se', 'score' : '1', 'game1' : '0', 'game2' : '2', 'game3' : '4', 'game4' : '6', 'game5' : '8', 'game6' : '10', 'game7' : '12', 'game8' : '14', 'game9' : '2', 'game10' : '6', 'game11' : '10', 'game12' : '14', 'game13' : '2', 'game14' : '10', 'game15' : '2' }, 
+          { 'id' : '30', 'name' : 'aaaaaaaa', 'email' : 'joel2@eee.se', 'score' : '10', 'game1' : '0', 'game2' : '3', 'game3' : '4', 'game4' : '6', 'game5' : '8', 'game6' : '10', 'game7' : '12', 'game8' : '14', 'game9' : '3', 'game10' : '6', 'game11' : '8', 'game12' : '14', 'game13' : '6', 'game14' : '14', 'game15' : '14' }, 
+          { 'id' : '31', 'name' : 'JOEL_3', 'email' : 'joel3@eee.se', 'score' : '4', 'game1' : '1', 'game2' : '3', 'game3' : '5', 'game4' : '7', 'game5' : '8', 'game6' : '10', 'game7' : '13', 'game8' : '14', 'game9' : '3', 'game10' : '5', 'game11' : '8', 'game12' : '13', 'game13' : '3', 'game14' : '13', 'game15' : '13' }
+        ];
+      
+      }).finally(function() {
+
+        $scope.players.forEach(function(player) {
+          player.games = [];
+          $scope.games.forEach(function(game) {
+            var game = angular.copy(game);
+            player.games.push(game);
+          });
+          player.games[0].winner = $scope.teams[player.game1];
+          player.games[1].winner = $scope.teams[player.game2];
+          player.games[2].winner = $scope.teams[player.game3];
+          player.games[3].winner = $scope.teams[player.game4];
+          player.games[4].winner = $scope.teams[player.game5];
+          player.games[5].winner = $scope.teams[player.game6];
+          player.games[6].winner = $scope.teams[player.game7];
+          player.games[7].winner = $scope.teams[player.game8];
+          player.games[8].winner = $scope.teams[player.game9];
+          player.games[9].winner = $scope.teams[player.game10];
+          player.games[10].winner = $scope.teams[player.game11];
+          player.games[11].winner = $scope.teams[player.game12];
+          player.games[12].winner = $scope.teams[player.game13];
+          player.games[13].winner = $scope.teams[player.game14];
+          player.games[14].winner = $scope.teams[player.game15];
         });
+  
+        $scope.players.sort(function(itemA, itemB) {
+          return itemB.score - itemA.score;
+        });
+
       });
 
-      $scope.players.sort(function(itemA, itemB) {
-        return itemB.score - itemA.score;
-      });
+
+
 
     }
   });

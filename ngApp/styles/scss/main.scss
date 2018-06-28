@@ -61,7 +61,7 @@ ul.table-list > li.darkBg {
       opacity: 0.5;
     }
     &.none {
-      display: none;
+      opacity: 0.1;
     }
   }
 
@@ -75,8 +75,9 @@ ul.table-list > li.darkBg {
   .ranking-cell {
     border: 1px solid gray;
     padding: 5px 15px;    
+    height: 40px;
     &.collapsed {
-      max-height: 31px;
+      max-height: 40px;
       overflow: hidden;
     }
   }

@@ -5956,7 +5956,7 @@ ul.table-list > li.darkBg {
     .game-box .col-md-6.loser {
       opacity: 0.5; }
     .game-box .col-md-6.none {
-      display: none; }
+      opacity: 0.1; }
 
 .ranking-table {
   padding: 25px; }
@@ -5964,7 +5964,8 @@ ul.table-list > li.darkBg {
     background: lightblue; }
   .ranking-table .ranking-cell {
     border: 1px solid gray;
-    padding: 5px 15px; }
+    padding: 5px 15px;
+    height: 40px; }
     .ranking-table .ranking-cell.collapsed {
-      max-height: 31px;
+      max-height: 40px;
       overflow: hidden; }
