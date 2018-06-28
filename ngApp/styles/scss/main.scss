@@ -21,21 +21,11 @@ ul.table-list > li.darkBg {
   cursor: pointer;
 }
 
-.fix-amount {
-  font-weight: bold;
-  color: #a25858;
-  background: #ffcbcb;
-  padding: 1px 10px;
-  border: 1px solid #a25858;
-}
-
-.amount {
-  font-family: monospace;
-  font-size: 14px;
-  &.positive {
-    color: #26af33;
-  }
-  &.negative {
-    color: #de2929;
-  }
+.game-box {
+  height: 120px;
+  background: #008b8b5e;
+  border: 2px solid #008b8b;
+  border-radius: 3px;
+  padding: 5px 15px;
+  margin: 10px 0;
 }
