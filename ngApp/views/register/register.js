@@ -9,16 +9,7 @@ angular.module('myApp.register', ['ngRoute'])
     controller: function($scope, $uibModal) {
       $scope.isBetReady = false;
 
-      $uibModal.open({
-        animation: true,
-        ariaLabelledBy: 'modal-title',
-        ariaDescribedBy: 'modal-body',
-        templateUrl: 'views/register/submit-modal.html',
-        scope: $scope,
-        controller: function() {
-        },
-        size: 'md'
-      });
+
 
       $scope.teams = [
         { id: 0,  name: 'Uruguay',       flagImg: 'uy.png' },
@@ -164,6 +155,19 @@ angular.module('myApp.register', ['ngRoute'])
         }
       };
 
+
+      $scope.openSubmitModal = function() {
+        $uibModal.open({
+          animation: true,
+          ariaLabelledBy: 'modal-title',
+          ariaDescribedBy: 'modal-body',
+          templateUrl: 'views/register/submit-modal.html',
+          scope: $scope,
+          controller: function() {
+          },
+          size: 'md'
+        });
+      }
 
 
     }
