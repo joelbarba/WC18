@@ -4,7 +4,7 @@
       <h2>Register your bet</h2>
     </div>
     <div class="col-xs-4 text-right">
-      <button class="btn btn-success"  ng-show="isBetReady || true" ng-click="openSubmitModal()"
+      <button class="btn btn-success"  ng-show="isBetReady" ng-click="openSubmitModal()"
               style="font-size: 30px;" type="submit">Submit Your Bet !!</button>
     </div>
   </div>
@@ -98,7 +98,7 @@
       
       <!-- Game 9 -->
       <div class="game-box" style="margin-top:70px">
-        <h5>w:{{games[8].winner}} t8:{{getTeamB(8).id}} {{games[8].desc}}</h5>
+        <h5>{{games[8].desc}}</h5>
         <div class="row">
           <div class="col-md-6 text-center" ng-click="selectTeam(getTeamA(8), 8)" ng-class="getTeamClass(8, 'A')">
             <div class="team-wrapper">

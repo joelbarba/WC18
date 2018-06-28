@@ -5957,3 +5957,14 @@ ul.table-list > li.darkBg {
       opacity: 0.5; }
     .game-box .col-md-6.none {
       display: none; }
+
+.ranking-table {
+  padding: 25px; }
+  .ranking-table .ranking-header {
+    background: lightblue; }
+  .ranking-table .ranking-cell {
+    border: 1px solid gray;
+    padding: 5px 15px; }
+    .ranking-table .ranking-cell.collapsed {
+      max-height: 31px;
+      overflow: hidden; }

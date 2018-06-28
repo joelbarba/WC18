@@ -66,3 +66,18 @@ ul.table-list > li.darkBg {
   }
 
 }
+
+.ranking-table {
+  padding: 25px;
+  .ranking-header{
+    background: lightblue;
+  }
+  .ranking-cell {
+    border: 1px solid gray;
+    padding: 5px 15px;    
+    &.collapsed {
+      max-height: 31px;
+      overflow: hidden;
+    }
+  }
+}

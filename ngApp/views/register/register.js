@@ -10,46 +10,46 @@ angular.module('myApp.register', ['ngRoute'])
       $scope.isBetReady = false;
 
 
-
+      // https://github.com/hjnilsson/country-flags/tree/master/png100px
       $scope.teams = [
-        { id: 0,  name: 'Uruguay',       flagImg: 'uy.png' },
-        { id: 1,  name: 'Portugal',      flagImg: 'pt.png' },
-        { id: 2,  name: 'Team  2',       flagImg: '' },
-        { id: 3,  name: 'Team  3',       flagImg: '' },
-        { id: 4,  name: 'Team  4',       flagImg: '' },
-        { id: 5,  name: 'Team  5',       flagImg: '' },
-        { id: 6,  name: 'Team  6',       flagImg: '' },
-        { id: 7,  name: 'Team  7',       flagImg: '' },
-        { id: 8,  name: 'Team  8',       flagImg: '' },
-        { id: 9,  name: 'Team  9',       flagImg: '' },
-        { id: 10, name: 'Team 10',       flagImg: '' },
-        { id: 11, name: 'Team 11',       flagImg: '' },
-        { id: 12, name: 'Team 12',       flagImg: '' },
-        { id: 13, name: 'Team 13',       flagImg: '' },
-        { id: 14, name: 'Team 14',       flagImg: '' },
-        { id: 15, name: 'Team 15',       flagImg: '' }
+        { id: 0,  name: 'Uruguay',     flagImg: 'uy.png' },
+        { id: 1,  name: 'Portugal',    flagImg: 'pt.png' },
+        { id: 2,  name: 'France',      flagImg: 'fr.png' },
+        { id: 3,  name: 'Argentina',   flagImg: 'ar.png' },
+        { id: 4,  name: 'Brazil',      flagImg: 'br.png' },
+        { id: 5,  name: 'Mexico',      flagImg: 'mx.png' },
+        { id: 6,  name: '???England',  flagImg: 'en.png' },
+        { id: 7,  name: 'Japan',       flagImg: 'jp.png' },
+        { id: 8,  name: 'Spain',       flagImg: 'es.png' },
+        { id: 9,  name: 'Rusia',       flagImg: 'ru.png' },
+        { id: 10, name: 'Croatia',     flagImg: 'hr.png' },
+        { id: 11, name: 'Denmark',     flagImg: 'dk.png' },
+        { id: 12, name: 'Sweden',      flagImg: 'se.png' },
+        { id: 13, name: 'Switzerland', flagImg: 'ch.png' },
+        { id: 14, name: 'Colombia',    flagImg: 'co.png' },
+        { id: 15, name: '???Belgium',  flagImg: 'be.png' }
       ];
 
       $scope.games = [
         // Round 1:
-        { id: 0,  desc: 'Game 1 (Sat ??/? ??:00)', teamA: 0,  teamB: 1,  winner: null },
-        { id: 1,  desc: 'Game 2 (Sat ??/? ??:00)', teamA: 2,  teamB: 3,  winner: null },
-        { id: 2,  desc: 'Game 3 (Sat ??/? ??:00)', teamA: 4,  teamB: 5,  winner: null },
-        { id: 3,  desc: 'Game 4 (Sat ??/? ??:00)', teamA: 6,  teamB: 7,  winner: null },
-        { id: 4,  desc: 'Game 5 (Sat ??/? ??:00)', teamA: 8,  teamB: 9,  winner: null },
-        { id: 5,  desc: 'Game 6 (Sat ??/? ??:00)', teamA: 10, teamB: 11, winner: null },
-        { id: 6,  desc: 'Game 7 (Sat ??/? ??:00)', teamA: 12, teamB: 13, winner: null },
-        { id: 7,  desc: 'Game 8 (Sat ??/? ??:00)', teamA: 14, teamB: 15, winner: null },
+        { id: 0,  desc: 'Game 1 (Sat 30/6 19:00)', teamA: 0,  teamB: 1,  winner: null },
+        { id: 1,  desc: 'Game 2 (Sat 30/6 15:00)', teamA: 2,  teamB: 3,  winner: null },
+        { id: 2,  desc: 'Game 3 (Mon 02/7 15:00)', teamA: 4,  teamB: 5,  winner: null },
+        { id: 3,  desc: 'Game 4 (Mon 02/7 19:00)', teamA: 6,  teamB: 7,  winner: null },
+        { id: 4,  desc: 'Game 5 (Sun 01/7 15:00)', teamA: 8,  teamB: 9,  winner: null },
+        { id: 5,  desc: 'Game 6 (Sun 01/7 19:00)', teamA: 10, teamB: 11, winner: null },
+        { id: 6,  desc: 'Game 7 (Tue 03/7 15:00)', teamA: 12, teamB: 13, winner: null },
+        { id: 7,  desc: 'Game 8 (Tue 03/7 19:00)', teamA: 14, teamB: 15, winner: null },
         // Quarter-Finals:
-        { id: 8,  desc: 'Game 9 (Sat ??/? ??:00)', teamA: null,  teamB: null,  winner: null },
-        { id: 9,  desc: 'Game 10 (Sat ??/? ??:00)', teamA: null,  teamB: null,  winner: null },
-        { id: 10, desc: 'Game 11 (Sat ??/? ??:00)', teamA: null,  teamB: null,  winner: null },
-        { id: 11, desc: 'Game 12 (Sat ??/? ??:00)', teamA: null,  teamB: null,  winner: null },
+        { id: 8,  desc: 'Quarters 1 (Fri 06/7 15:00)', teamA: null,  teamB: null,  winner: null },
+        { id: 9,  desc: 'Quarters 2 (Fri 06/7 19:00)', teamA: null,  teamB: null,  winner: null },
+        { id: 10, desc: 'Quarters 3 (Sat 07/7 19:00)', teamA: null,  teamB: null,  winner: null },
+        { id: 11, desc: 'Quarters 4 (Sat 07/7 15:00)', teamA: null,  teamB: null,  winner: null },
         // Semi-Finals:
-        { id: 12, desc: 'Game 13 (Sat ??/? ??:00)', teamA: null,  teamB: null,  winner: null },
-        { id: 13, desc: 'Game 14 (Sat ??/? ??:00)', teamA: null,  teamB: null,  winner: null },
+        { id: 12, desc: 'Semifinal 1 (Tue 10/7 19:00)', teamA: null,  teamB: null,  winner: null },
+        { id: 13, desc: 'Semifinal 2 (Tue 10/7 19:00)', teamA: null,  teamB: null,  winner: null },
         // Final:
-        { id: 14, desc: 'Final (Sat ??/? ??:00)', teamA: null,  teamB: null,  winner: null },
+        { id: 14, desc: 'FINAL (Sun 15/7 16:00)', teamA: null,  teamB: null,  winner: null },
       ];
 
 
