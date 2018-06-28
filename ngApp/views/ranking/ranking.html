@@ -1,0 +1,350 @@
+<div>
+  <div class="row">
+    <div class="col-xs-8">
+      <h2>Ranking</h2>
+    </div>
+    <div class="col-xs-4 text-right">
+      <button class="btn btn-success"  ng-show="isBetReady || true" ng-click="openSubmitModal()"
+              style="font-size: 30px;" type="submit">Submit Your Bet !!</button>
+    </div>
+  </div>
+    
+  <div class="row" style="margin-top:20px">
+    <!-- 16th Round -->
+    <div class="col-xs-2">
+      
+      <!-- Game 1 -->
+      <div class="game-box">
+        <h5>{{games[0].desc}}</h5>
+        <div class="row">
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamA(0), 0)" ng-class="getTeamClass(0, 'A')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamA(0).flagImg }}"/>
+              <h5>{{getTeamA(0).name}}</h5>
+            </div>
+          </div>
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamB(0), 0)" ng-class="getTeamClass(0, 'B')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamB(0).flagImg }}"/>
+              <h5>{{getTeamB(0).name}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Game 2 -->
+      <div class="game-box">
+        <h5>{{games[1].desc}}</h5>
+        <div class="row">
+          <div class="col-md-6 text-center team-col" ng-click="selectTeam(getTeamA(1), 1)" ng-class="getTeamClass(1, 'A')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamA(1).flagImg }}"/>
+              <h5>{{getTeamA(1).name}}</h5>
+            </div>
+          </div>
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamB(1), 1)" ng-class="getTeamClass(1, 'B')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamB(1).flagImg }}"/>
+              <h5>{{getTeamB(1).name}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="height:50px"></div>
+
+      <!-- Game 3 -->
+      <div class="game-box">
+        <h5>{{games[2].desc}}</h5>
+        <div class="row">
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamA(2), 2)" ng-class="getTeamClass(2, 'A')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamA(2).flagImg }}"/>
+              <h5>{{getTeamA(2).name}}</h5>
+            </div>
+          </div>
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamB(2), 2)" ng-class="getTeamClass(2, 'B')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamB(2).flagImg }}"/>
+              <h5>{{getTeamB(2).name}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Game 4 -->
+      <div class="game-box">
+        <h5>{{games[3].desc}}</h5>
+        <div class="row">
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamA(3), 3)" ng-class="getTeamClass(3, 'A')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamA(3).flagImg }}"/>
+              <h5>{{getTeamA(3).name}}</h5>
+            </div>
+          </div>
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamB(3), 3)" ng-class="getTeamClass(3, 'B')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamB(3).flagImg }}"/>
+              <h5>{{getTeamB(3).name}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- Quarters -->
+    <div class="col-xs-2">
+      
+      <!-- Game 9 -->
+      <div class="game-box" style="margin-top:70px">
+        <h5>w:{{games[8].winner}} t8:{{getTeamB(8).id}} {{games[8].desc}}</h5>
+        <div class="row">
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamA(8), 8)" ng-class="getTeamClass(8, 'A')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamA(8).flagImg }}"/>
+              <h5>{{getTeamA(8).name}}</h5>
+            </div>
+          </div>
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamB(8), 8)" ng-class="getTeamClass(8, 'B')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamB(8).flagImg }}"/>
+              <h5>{{getTeamB(8).name}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Game 10 -->
+      <div class="game-box" style="margin-top:200px">
+        <h5>{{games[9].desc}}</h5>
+        <div class="row">
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamA(9), 9)" ng-class="getTeamClass(9, 'A')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamA(9).flagImg }}"/>
+              <h5>{{getTeamA(9).name}}</h5>
+            </div>
+          </div>
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamB(9), 9)" ng-class="getTeamClass(9, 'B')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamB(9).flagImg }}"/>
+              <h5>{{getTeamB(9).name}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="col-xs-4">
+      
+      <!-- Final -->
+      <div class="row" style="height:56px">
+        <div class="col-xs-12 text-center" ng-if="games[14].winner !== null">
+          <h3>{{'Winner: ' + teams[games[14].winner].name}}</h3>
+        </div>
+      </div>
+      
+      <div class="row" style="margin-top:15px">
+        <div class="col-xs-6 col-xs-offset-3">
+          
+          <!-- Game 15 -->
+          <div class="game-box">
+            <h5>{{games[14].desc}}</h5>
+            <div class="row">
+              <div class="col-md-6 text-center" ng-click="selectTeam(getTeamA(14), 14)" ng-class="getTeamClass(14, 'A')">
+                <div class="team-wrapper">
+                  <img class="team-flag" ng-src="{{'images/' + getTeamA(14).flagImg }}"/>
+                  <h5>{{getTeamA(14).name}}</h5>
+                </div>
+              </div>
+              <div class="col-md-6 text-center" ng-click="selectTeam(getTeamB(14), 14)" ng-class="getTeamClass(14, 'B')">
+                <div class="team-wrapper">
+                  <img class="team-flag" ng-src="{{'images/' + getTeamB(14).flagImg }}"/>
+                  <h5>{{getTeamB(14).name}}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+      <!-- Semifinal -->
+      <div class="row" style="margin-top:15px">
+        <div class="col-xs-6">
+
+          <!-- Game 13 -->
+          <div class="game-box">
+            <h5>{{games[12].desc}}</h5>
+            <div class="row">
+              <div class="col-md-6 text-center" ng-click="selectTeam(getTeamA(12), 12)" ng-class="getTeamClass(12, 'A')">
+                <div class="team-wrapper">
+                  <img class="team-flag" ng-src="{{'images/' + getTeamA(12).flagImg }}"/>
+                  <h5>{{getTeamA(12).name}}</h5>
+                </div>
+              </div>
+              <div class="col-md-6 text-center" ng-click="selectTeam(getTeamB(12), 12)" ng-class="getTeamClass(12, 'B')">
+                <div class="team-wrapper">
+                  <img class="team-flag" ng-src="{{'images/' + getTeamB(12).flagImg }}"/>
+                  <h5>{{getTeamB(12).name}}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="col-xs-6">
+          
+          <!-- Game 14 -->
+          <div class="game-box">  
+            <h5>{{games[13].desc}}</h5>
+            <div class="row">
+              <div class="col-md-6 text-center" ng-click="selectTeam(getTeamA(13), 13)" ng-class="getTeamClass(13, 'A')">
+                <div class="team-wrapper">
+                  <img class="team-flag" ng-src="{{'images/' + getTeamA(13).flagImg }}"/>
+                  <h5>{{getTeamA(13).name}}</h5>
+                </div>
+              </div>
+              <div class="col-md-6 text-center" ng-click="selectTeam(getTeamB(13), 13)" ng-class="getTeamClass(13, 'B')">
+                <div class="team-wrapper">
+                  <img class="team-flag" ng-src="{{'images/' + getTeamB(13).flagImg }}"/>
+                  <h5>{{getTeamB(13).name}}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+    <!-- Quarters -->
+    <div class="col-xs-2">
+
+      <!-- Game 11 -->
+      <div class="game-box" style="margin-top:70px">  
+        <h5>{{games[10].desc}}</h5>
+        <div class="row">
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamA(10), 10)" ng-class="getTeamClass(10, 'A')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamA(10).flagImg }}"/>
+              <h5>{{getTeamA(10).name}}</h5>
+            </div>
+          </div>
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamB(10), 10)" ng-class="getTeamClass(10, 'B')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamB(10).flagImg }}"/>
+              <h5>{{getTeamB(10).name}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Game 12 -->
+      <div class="game-box" style="margin-top:200px">
+        <h5>{{games[11].desc}}</h5>
+        <div class="row">
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamA(11), 11)" ng-class="getTeamClass(11, 'A')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamA(11).flagImg }}"/>
+              <h5>{{getTeamA(11).name}}</h5>
+            </div>
+          </div>
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamB(11), 11)" ng-class="getTeamClass(11, 'B')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamB(11).flagImg }}"/>
+              <h5>{{getTeamB(11).name}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- 16th Round -->
+    <div class="col-xs-2">
+      
+      <!-- Game 5 -->
+      <div class="game-box">
+        <h5>{{games[4].desc}}</h5>
+        <div class="row">
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamA(4), 4)" ng-class="getTeamClass(4, 'A')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamA(4).flagImg }}"/>
+              <h5>{{getTeamA(4).name}}</h5>
+            </div>
+          </div>
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamB(4), 4)" ng-class="getTeamClass(4, 'B')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamB(4).flagImg }}"/>
+              <h5>{{getTeamB(4).name}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Game 6 -->
+      <div class="game-box">
+        <h5>{{games[5].desc}}</h5>
+        <div class="row">
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamA(5), 5)" ng-class="getTeamClass(5, 'A')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamA(5).flagImg }}"/>
+              <h5>{{getTeamA(5).name}}</h5>
+            </div>
+          </div>
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamB(5), 5)" ng-class="getTeamClass(5, 'B')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamB(5).flagImg }}"/>
+              <h5>{{getTeamB(5).name}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="height:50px"></div>
+      
+      <!-- Game 7 -->
+      <div class="game-box">
+        <h5>{{games[6].desc}}</h5>
+        <div class="row">
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamA(6), 6)" ng-class="getTeamClass(6, 'A')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamA(6).flagImg }}"/>
+              <h5>{{getTeamA(6).name}}</h5>
+            </div>
+          </div>
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamB(6), 6)" ng-class="getTeamClass(6, 'B')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamB(6).flagImg }}"/>
+              <h5>{{getTeamB(6).name}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Game 8 -->
+      <div class="game-box">
+        <h5>{{games[7].desc}}</h5>
+        <div class="row">
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamA(7), 7)" ng-class="getTeamClass(7, 'A')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamA(7).flagImg }}"/>
+              <h5>{{getTeamA(7).name}}</h5>
+            </div>
+          </div>
+          <div class="col-md-6 text-center" ng-click="selectTeam(getTeamB(7), 7)" ng-class="getTeamClass(7, 'B')">
+            <div class="team-wrapper">
+              <img class="team-flag" ng-src="{{'images/' + getTeamB(7).flagImg }}"/>
+              <h5>{{getTeamB(7).name}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
+</div>

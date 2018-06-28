@@ -1,0 +1,52 @@
+<div style="padding: 0px 30px 20px;">  
+  <div class="row">
+    <h3 style="margin-bottom: 40px;">Submit modal</h3>
+
+    <div class="col-md-5">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Your Name (or nickname)</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="...">
+      </div>
+    </div>
+
+    <div class="col-md-7">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Your Email</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h4>Your bet:</h4>      
+    </div>
+    <div class="col-xs-12" ng-repeat="game in games">
+      <div class="row">
+        <div class="col-xs-6">
+          <h5 style="margin: 7px 0;">{{game.desc}}</h5>
+        </div>
+        <div class="col-xs-6">
+          
+          <h5 style="margin: 7px 0;">
+              <img style="width: 30px; height: 20px; border: 1px solid black; margin-right: 10px;" ng-src="{{'images/' + teams[game.winner].flagImg }}"/>
+            {{teams[game.winner].name}}
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <hr/>
+    </div>
+    <div class="col-xs-6">
+      <button class="btn btn-default" type="submit" ng-click="$close()">Close</button>
+    </div>
+    <div class="col-xs-6 text-right">
+      <button class="btn btn-success" type="submit" ng-click="$close()">Ok, Submit!</button>
+    </div>
+  </div>
+
+</div>

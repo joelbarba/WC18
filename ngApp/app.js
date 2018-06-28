@@ -4,9 +4,8 @@
 angular.module('myApp', [
   'ngRoute'
   , 'myApp.register'
-  // , 'myApp.ledger'
-  // , 'myApp.view3'
-  // , 'myApp.version'
+  , 'myApp.ranking'
+  , 'myApp.rules'
   , 'myApp.jDirectives'
   , 'myApp.jFilters'
   , 'ui.bootstrap'
