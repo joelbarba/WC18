@@ -29,8 +29,40 @@ ul.table-list > li.darkBg {
   border-radius: 3px;
   padding: 5px 15px;
   margin: 10px 0;
-  .team-flag{ 
-    max-height: 40px;
+  .col-md-6 {
+    padding: 0 5px;
+    .team-wrapper {
+      width: 100%;
+      padding: 5px;
+      .team-flag{ 
+        max-height: 40px;
+        max-width: 70px;
+        width: 80%;
+        cursor: pointer;
+        border: 1px solid black;
+        padding: 1px;
+        background: white;
+        border-radius: 1px;
+      }
+      h5 {
+        margin-bottom: 0;
+        margin-top: 5px;
+      }
+    }
+    &.winner {
+      .team-wrapper {
+        border: 3px solid #FF9800;
+        padding: 2px;
+        background: #FFC107;
+        border-radius: 4px;
+      }
+    }
+    &.loser {
+      opacity: 0.5;
+    }
+    &.none {
+      display: none;
+    }
   }
 
 }
