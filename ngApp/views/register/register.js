@@ -18,7 +18,7 @@ angular.module('myApp.register', ['ngRoute'])
         { id: 3,  name: 'Argentina',   flagImg: 'ar.png' },
         { id: 4,  name: 'Brazil',      flagImg: 'br.png' },
         { id: 5,  name: 'Mexico',      flagImg: 'mx.png' },
-        { id: 6,  name: '???England',  flagImg: 'en.png' },
+        { id: 6,  name: 'Belgium',     flagImg: 'be.png' },
         { id: 7,  name: 'Japan',       flagImg: 'jp.png' },
         { id: 8,  name: 'Spain',       flagImg: 'es.png' },
         { id: 9,  name: 'Rusia',       flagImg: 'ru.png' },
@@ -27,7 +27,7 @@ angular.module('myApp.register', ['ngRoute'])
         { id: 12, name: 'Sweden',      flagImg: 'se.png' },
         { id: 13, name: 'Switzerland', flagImg: 'ch.png' },
         { id: 14, name: 'Colombia',    flagImg: 'co.png' },
-        { id: 15, name: '???Belgium',  flagImg: 'be.png' }
+        { id: 15, name: 'England',     flagImg: 'en.png' }
       ];
 
       $scope.games = [
@@ -166,7 +166,8 @@ angular.module('myApp.register', ['ngRoute'])
           scope: $scope,
           size: 'md',
           controller: function($scope, $uibModalInstance, $http) {
-            $scope.yourEmail = 'joel@eee.se';
+            $scope.yourName = '';
+            $scope.yourEmail = '';
 
             $scope.registerBet = function() {
               console.log('registering', $scope.games);  
@@ -197,12 +198,20 @@ angular.module('myApp.register', ['ngRoute'])
                 method: 'GET',
                 url: insertUrl
               }).then(function(response) {
-                console.log('OK');  
-                window.alert('Done, you are already in. Good luck!');
-                $uibModalInstance.close(); 
+
+                var jsonResp = JSON.parse(response.data.replace(/'/g, '"'));
+                if (jsonResp.result === 'ok') {
+                  console.log('OK');  
+                  window.alert('Done, you are already in. Good luck!');
+                  $uibModalInstance.close(); 
+
+                } else {
+                  window.alert('Ooops. There was something wrong. Ask Joel.');
+                }
 
               }, function errorCallback(response) {
                 console.log('ERROR');   
+                window.alert('Ooops. There was something wrong. Ask Joel.');
                   // called asynchronously if an error occurs
                   // or server returns response with an error status.
                 });

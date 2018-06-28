@@ -4,12 +4,11 @@
 angular.module('myApp', [
   'ngRoute'
   , 'myApp.register'
-  // , 'myApp.ledger'
-  // , 'myApp.view3'
-  // , 'myApp.version'
-  // , 'myApp.jDirectives'
-  // , 'myApp.jFilters'
-  // , 'ui.bootstrap'
+  , 'myApp.ranking'
+  , 'myApp.rules'
+  , 'myApp.jDirectives'
+  , 'myApp.jFilters'
+  , 'ui.bootstrap'
   // , 'angularUtils.directives.dirPagination'
   // , 'ngResource'
   // , 'angular-growl'
@@ -28,7 +27,7 @@ config(function($locationProvider, $routeProvider) {
   // growlProvider.globalTimeToLive(3000);
   // growlProvider.globalDisableCountDown(true);
 
-  $routeProvider.otherwise({redirectTo: '/pots'});
+  $routeProvider.otherwise({redirectTo: '/register'});
 
 })
 .run(function($rootScope) {

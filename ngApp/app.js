@@ -11,8 +11,8 @@ angular.module('myApp', [
   , 'ui.bootstrap'
   // , 'angularUtils.directives.dirPagination'
   // , 'ngResource'
-  , 'angular-growl'
-  , 'ngAnimate'
+  // , 'angular-growl'
+  // , 'ngAnimate'
 ]).
 config(function($locationProvider, $routeProvider) {
   "ngInject";

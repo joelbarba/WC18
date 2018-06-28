@@ -74,10 +74,9 @@ ul.table-list > li.darkBg {
   }
   .ranking-cell {
     border: 1px solid gray;
-    padding: 5px 15px;    
-    height: 40px;
+    padding: 5px 15px;  
     &.collapsed {
-      max-height: 40px;
+      max-height: 31px;
       overflow: hidden;
     }
   }
