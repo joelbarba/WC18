@@ -1,0 +1,92 @@
+body {
+  background: $background_color;
+  .navbar {
+    border-radius: 0;
+    background: lighten($primary_color, 30%);
+    .navbar-header {
+      width: 100%;
+    }
+    .navbar-brand {
+      padding: 6px;
+      img { width: 42px; }
+    }
+  }
+}
+
+ul.table-list > li.darkBg {
+  padding: 2px 20px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.game-box {
+  height: 120px;
+  background: rgba(0, 139, 139, 0.5);
+  box-shadow: #696969 4px 4px 8px 0;
+  border: 2px solid #008b8b;
+  border-radius: 3px;
+  padding: 5px 15px;
+  margin: 10px 0;
+  .col-md-6 {
+    padding: 0 5px;
+    .team-wrapper {
+      width: 100%;
+      padding: 5px;
+      .team-flag{ 
+        max-height: 40px;
+        max-width: 70px;
+        width: 80%;
+        cursor: pointer;
+        border: 1px solid black;
+        padding: 1px;
+        background: white;
+        border-radius: 1px;
+      }
+      h5 {
+        margin-bottom: 0;
+        margin-top: 5px;
+      }
+    }
+    &.winner {
+      .team-wrapper {
+        border: 3px solid #FF9800;
+        padding: 2px;
+        background: #FFC107;
+        border-radius: 4px;
+      }
+    }
+    &.loser {
+      opacity: 0.5;
+    }
+    &.none {
+      opacity: 0.1;
+    }
+  }
+
+}
+
+.ranking-table {
+  padding: 25px;
+  .ranking-header{
+    background: lightblue;
+  }
+  .ranking-cell {
+    border: 1px solid gray;
+    padding: 5px 15px;  
+    &.collapsed {
+      max-height: 31px;
+      overflow: hidden;
+    }
+  }
+}
+
+     
+     
+.winner-row {
+  background: rgba(0, 255, 0, 0.17);
+}     
+.loser-row {
+  background: rgba(255, 0, 0, 0.17);
+}
